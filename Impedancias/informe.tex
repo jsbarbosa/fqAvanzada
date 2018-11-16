@@ -39,6 +39,7 @@
 %----------------------------------------------------------------------------------------
 
 \Abstract{
+	El presente documento contiene los espectros de impedancia para soluciones 0,1 M, 0,5 M y 1,0 de perclorato de litio en agua, 0,1 M de sulfato de sodio en agua y 0,1 M de \ce{LiClO4} en acetonitrilo, para potenciales de 0,0 V y 0,3 V. Los cuales fueron obtenidos usando un sistema de tres electrodos de oro, platino y Ag/\ce{AgCl2}. Se muestra el efecto de la activaci\'on electroqu\'imica del electrodo de oro, junto con los valores de un circuito ideal propuesto.
 }
 
 %----------------------------------------------------------------------------------------
@@ -59,36 +60,51 @@
 	%----------------------------------------------------------------------------------------
 	
 	\section*{Introducci\'on}
-	La impedancia representa la oposici\'on que un circuito exhibe al flujo de una corriente sinusoidal.	
+	En circuitos se define la resistencia el\'ectrica ($R$) como la oposici\'on que este exhibe al flujo de una corriente \cite{alexander2009fundamentals}. Resistencias el\'ectricas se encuentran con facilidad en la vida cotidiana, por ejemplo en un horno casero. Sin embargo, el concepto de oposici\'on a un flujo de corriente presenta una generalizaci\'on, pues corrientes que oscilan generan oposici\'on en elementos como capacitores. Por esta raz\'on se define la impedancia ($Z$), como la relaci\'on entre el fasor de voltaje y el fasor de corriente, donde los fasores corresponden con una representaci\'on en los n\'umeros complejos de una fase y amplitud de una se\~nal \cite{alexander2009fundamentals}. La impedancia neta de un circuito puede ser obtenida usando las mismas propiedades usadas para resistencias, esto es: para $k$ elementos en serie, la impedancia equivalente ser\'a la suma de las impeancias individuales; para $k$ elementos en paralelo se tiene:
+	\begin{equation}
+		\dfrac{1}{Z_{eq}} = \sum\limits_{i=0}^{k}\dfrac{1}{Z_i}
+	\end{equation}
 	
-	the capacitor is a short circuit. Figure 9.15 illustrates this.
-	As a complex quantity, the impedance may be expressed in rectan-
-	gular form as
-	Open circuit at
-	high frequencies
-	(a)
-	where R = Re Z is the resistance and X = Im Z is the reactance. The
-	reactance X may be positive or negative. We say that the impedance is
-	inductive when X is positive or capacitive when X is negative. Thus,
-	impedance Z = R + j X is said to be inductive or lagging since current
-	lags voltage, while impedance Z = R - j X is capacitive or leading
-	because current leads voltage. The impedance, resistance, and reactance
-	are all measured in ohms. The impedance may also be expressed in polar
-	form as
+	La impedancia se representa con un n\'umero complejo y tiene las mismas unidades de la resistencia, $\Omega$. En tanto n\'umero complejo, tambi\'en es posible expresar la impedancia de manera polar, usando la f\'ormula de Euler.
+	\begin{equation}
+		Z = R + jX = Ae^{j\theta}
+	\end{equation}
 	
-	En la última década, la Espectroscopía de Impedancia Electroquímica (EIS) se ha establecido como una de las herramientas analíticas más populares en la investigación de materiales. La técnica se está aplicando de manera amplia y efectiva a un gran número de áreas importantes de investigación y análisis de materiales, tales como estudios de corrosión; monitoreo de propiedades de polímeros, coloides y revestimientos electrónicos e iónicos; mediciones en almacenamiento de energía, baterías y sistemas relacionados con pilas de combustible; análisis biológicos y sensores biomédicos; mediciones en semiconductores y electrolitos sólidos. La EIS permite estudiar procesos como la adsorción, el transporte de carga y masa y la cinética de reacciones secuenciales y paralelas acopladas \cite{lvovich2012impedance}.
+	Donde $A = \sqrt{R^2 + X^2}$, $j = \sqrt{-1}$ y $\theta = \arctan(X/R)$. En particular para una resistencia se tiene que la impedancia corresponde con la resistencia, y para un capacitor $Z = 1/j\omega C$, donde $C$ es la capacitancia y $\omega = 2\pi f$ la frecuencia angular de la se\~nal aplicada, y $f$ la frecuencia en Hz.
 	
-	Los datos de impedancia obtenidos experimentalmente para un sistema de electrodo/material pueden analizarse utilizando un modelo matemático exacto basado en una teoría física plausible que predice la impedancia teórica $Z_t(\omega)$ o mediante un circuito equivalente relativamente empírico, estimando los parámetros, cuyas predicciones de impedancia se pueden denotar con $Z_{ec}(\omega)$. Las desventajas de la EIS se asocian principalmente con posibles ambigüedades en la interpretación. Una complicación importante de los análisis basados en un circuito equivalente es que los elementos de circuito ideal representan propiedades constantes ideales. En estas condiciones, los elementos ideales del circuito pueden ser inadecuados para describir la respuesta eléctrica. Muchos han observado en el campo que el uso de elementos de impedancia distribuida (por ejemplo, los elementos de fase constante (CPE)) en el circuito equivalente ayudan en gran medida al proceso de ajuste de los datos de impedancia observada para una celda con propiedades distribuidas \cite{macdonald2005impedance}.
+	En la última década, la Espectroscopía de Impedancia Electroquímica (EIS) se ha establecido como una de las herramientas analíticas más populares en la investigación de materiales. La técnica se está aplicando de manera amplia y efectiva a un gran número de áreas importantes de investigación y análisis de materiales, tales como estudios de corrosión; monitoreo de propiedades de polímeros, coloides y revestimientos electrónicos e iónicos; mediciones en almacenamiento de energía, baterías y sistemas relacionados con pilas de combustible; análisis biológicos y sensores biomédicos; mediciones en semiconductores y electrolitos sólidos. La EIS permite estudiar procesos como la adsorción, el transporte de carga y masa, y la cinética de reacciones secuenciales y paralelas acopladas \cite{lvovich2012impedance}.
+	
+	Los datos de impedancia obtenidos experimentalmente para un sistema de electrodo/material pueden analizarse utilizando un modelo matemático exacto basado en una teoría física plausible que predice la impedancia teórica $Z_t(\omega)$ o mediante un circuito equivalente relativamente empírico, estimando los parámetros, cuyas predicciones de impedancia se pueden denotar con $Z_{ec}(\omega)$. Las desventajas de la EIS se asocian principalmente con posibles ambigüedades en la interpretación. Una complicación importante de los análisis basados en un circuito equivalente es que los elementos de circuito ideal representan propiedades constantes ideales. En estas condiciones, los elementos ideales del circuito pueden ser inadecuados para describir la respuesta eléctrica.
+	
+	Muchos han observado en el campo que el uso de elementos de impedancia distribuida (por ejemplo, los elementos de fase constante (CPE)) en el circuito equivalente ayudan en gran medida al proceso de ajuste de los datos de impedancia observada para una celda con propiedades distribuidas \cite{macdonald2005impedance}.
 
-	El presente informe contiene los espectros de impedancia junto con los circuitos ajustados de disoluciones a diferentes concentraciones del electrolito y variando de los iones presentes.
-	
-	
+	El presente informe contiene los espectros de impedancia junto con los circuitos ajustados, de disoluciones a diferentes concentraciones de electrolito y variando de los iones presentes, el disolvente usado y el potencial aplicado.
+		
 	\section{Secci\'on experimental}
 	Los espectros de impedancia fueron realizados en un sistema de tres electrodos: un electrodo de oro, un electrodo de Ag/AgCl y una barra de platino como electrodo de trabajo, de referencia y contraelectrodo respectivamente. El electrodo de trabajo de oro fue pulido con al\'umina (\ce{Al2O3}) de 1,00, 0,30 y 0,05 $\mu$m de diámetro sobre una almohadilla apropiada y posteriormente activado con voltamperometría cíclica (VC) usando 20 barridos desde -0,2 V hasta 1,6 V en agua. 
 	
-	Una solución 1,0 M de perclorato de litio fue preparada disolviendo 5,319 g de \ce{LiClO4} en 50 mL de agua, de esta solución se tomaron 12,5 mL los cuales fueron dispuestos en un balón aforado de 25 mL para obtener una solución 0,5 M. De manera análoga se obtuvo una solución 0,1 M usando 2,5 mL de la solución 1,0 M en 25 mL de agua. Una cuarta solución 0,1 M fue preparada disolviendo 0.266 g de \ce{LiClO4} en 25 mL de acetonitrilo, el cual fue previamente secado usando tamiz molecular. Finalmente, fue preparada una solución de sulfato de sodio 0,1 M usando 0,355 g de \ce{Na2SO4} los cuales fueron disueltos en un balón aforado de 25 mL. Cada activación del electrodo y cada medida de espectro de impedancia fue realizada después de gasificar la solución con nitrógeno durante 10 minutos.
+	Una solución 1,0 M de perclorato de litio fue preparada disolviendo 5,319 g de \ce{LiClO4} en 50 mL de agua, de esta solución se tomaron 12,5 mL los cuales fueron dispuestos en un balón aforado de 25 mL para obtener una solución 0,5 M. De manera análoga se obtuvo una solución 0,1 M usando 2,5 mL de la solución 1,0 M en 22,5 mL de agua. Una cuarta solución 0,1 M fue preparada disolviendo 0.266 g de \ce{LiClO4} en 25 mL de acetonitrilo, el cual fue previamente secado usando tamiz molecular. Finalmente, fue preparada una solución de sulfato de sodio 0,1 M usando 0,355 g de \ce{Na2SO4} los cuales fueron disueltos en un balón aforado de 25 mL. Cada activación del electrodo y cada medida de espectro de impedancia fue realizada después de gasificar la solución con nitrógeno durante 10 minutos.
+		
+	\section{Resultados y Discusi\'on}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=\linewidth]{voltametrias}
+		\caption{Voltametr\'ia c\'iclica de activaci\'on del electrodo de oro. Se muestra el primer y el d\'ecimo noveno barrido.}
+		\label{fig: VC}
+	\end{figure}
+
+	Como protocolo en las medidas electroquímicas, se tiene que limpiar cada electrodo apropiadamente. El electrodo de platino se somete a fuego de gas propano durante algunos segundos para que cualquier sustancia orgánica e inorgánica sea quemada. El electrodo de oro se pule con polvo de alúmina en agua para retirar cualquier partícula de la superficie yendo de particulas de mayor a menor tamaño, sometiéndolo a ultrasonido entre cada cambio de tamaño de partícula. Posteriormente se hacen 20 barridos en VC para activar el electrodo, es decir, retirar cualquier partícula de alúmina que pudo quedar en la superficie. La superficie también se reorganiza en los barridos desde -0,20 V hasta 1,60 V respecto a Ag/AgCl. 
 	
-	\begin{figure*}[h]
+	En la \autoref{fig: VC} se observa un pico de reducción entre 0,79 V y 0,8 V. Este pico fue aumentando tras cada barrido hasta que permaneció constante, esto se debe a la aparición de unos picos de oxidación entre 1,00 V y 1,25 V que fueron apareciendo mientras transcurrieron los barridos asociados a la formación de óxidos de oro superficial. También se observa una zona donde no hay corrientes faradaicas entre -0,20 V y 0,5 V, característico del oro, esto muestra que solo hay efecto de la doble capa eléctrica. Se estableció que el potencial de trabajo para la espectroscopía de impedancia electroquímica será 0,0 V y a 0,3 V ya que se garantiza que no hay reacciones a este potencial.
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.5\linewidth]{schematic}
+		\caption{Representaci\'on del circuito ideal asociado al sistema.}
+		\label{fig: ideal}
+	\end{figure}
+
+	\begin{figure*}[t]
 		\centering
 		\begin{subfigure}[t]{0.49\textwidth}
 			\centering
@@ -104,15 +120,8 @@
 		\label{fig: concentraciones}
 	\end{figure*}
 	
-	\section{Resultados y Discusi\'on}
-	Como protocolo en las medidas electroquímicas, se tiene que limpiar cada electrodo apropiadamente. El electrodo de platino se somete a fuego de gas propano durante algunos segundos para que cualquier sustancia orgánica e inorgánica sea quemada. El electrodo de oro se pule con polvo de alúmina en agua para retirar cualquier partícula de la superficie yendo de particular de mayor tamaño a menor tamaño, sometiéndolo a ultrasonido entre cada cambio de tamaño de partícula. Posteriormente se hacen 20 barridos en VC para activar el electrodo, es decir, retirar cualquier partícula de alúmina que pudo quedar en la superficie. La superficie también se reorganiza en los barridos desde -0,20 V hasta 1,60 V respecto a Ag/AgCl. En la \autoref{fig: VC} se observa un pico de reducción entre 0,79 V y 0,8 V. Este pico fue aumentando tras cada barrido hasta que permaneció constante, esto se debe a la aparición de unos picos de oxidación entre 1,00 V y 1,25 V que fueron apareciendo mientras transcurrieron los barridos asociados a la formación de óxidos de oro superficial. También se observa una zona donde no hay corrientes faradaicas entre -0,20 V y 0,5 V, característico del oro, esto muestra que solo hay efecto de la doble capa eléctrica. Se estableció que el potencial de trabajo para la espectroscopía de impedancia electroquímica será 0,0 V y a 0,3 V ya que se garantiza que no hay reacciones a este potencial.
-	\begin{figure}[h]
-		\centering
-		\includegraphics[width=\linewidth]{voltametrias}
-		\caption{Voltametr\'ia c\'iclica de activaci\'on del electrodo de oro. Se muestra el primer y el d\'ecimo noveno barrido.}
-		\label{fig: VC}
-	\end{figure}
-
+	En la \autoref{fig: concentraciones} se observa el cambio en las impedancias con respecto a la concentración. En primer lugar, se observa que la solución de menor concentración tiene más impedancia a mayores frecuencias, esto se debe a que la resistencia entre el electrodo de referencia y la interfaz electrodo de trabajo-electrolito es mayor debido a la menor concentración de electrolito como transportador de carga \cite{suarez2011}. Esto lo corroboran los valores de R1, asociados al circuito ideal de la \autoref{fig: ideal}, y que se muestran en la \autoref{tb: 0,0} y \autoref{tb: 0,3} y son mayores cuando la concentración es menor.  La \autoref{tb: 0,0} y \autoref{tb: 0,3} también muestran diferencias en el valor del elemento de fase constante CPE. Este elemento en el circuito llega a simular un condensador cuando el valor n es cercano a 1. Podemos observar que a mayor concentración hay un mayor valor en este elemento, esto significa que existe un mayor efecto en la doble capa eléctrica debido a la mayor presencia de iones en la superficie del electrodo.
+	
 	\begin{table}[h]
 		\caption{Valores de los elementos del circuito ajustado a los EIS a 0,0 V}
 		\begin{tabular}{r|ll|ll}
@@ -143,16 +152,14 @@
 		\label{tb: 0,3}
 	\end{table}
 	
-	En la \autoref{fig: concentraciones} se observa el cambio en las impedancias con respecto a la concentración. En primer lugar, se observa que la solución de menor concentración tiene más impedancia a mayores frecuencias (aquí es la parte de la ecuación que hablamos en la tarde), esto corresponde a que su resistencia entre el electrodo de referencia y la interfaz electrodo de trabajo-electrolito es mayor debido a la menor concentración de electrolito \cite{suarez2011} como transportador de carga. Esto lo corrobora los valores de R1 en la \autoref{tb: 0,0} y \autoref{tb: 0,3} que son mayores cuando la concentración es menor.  La \autoref{tb: 0,0} y \autoref{tb: 0,3} también muestra diferencias en el valor del elemento de fase constante CPE. Este elemento en el circuito llega a simular un condensador cuando el valor n es cercano a 1. Podemos observar que a mayor concentración hay un mayor valor en este elemento, esto significa que hay un mayor efecto en la doble capa eléctrica debido a la mayor presencia de iones en la superficie del electrolito. 
-	
-	\begin{figure}[h]
+	\begin{figure*}[h]
 		\centering
-		\includegraphics[width = \linewidth]{LiClO4_voltages}
-		\caption{Valores de impedancia en funci\'on de la frecuencia (superior) y diagrama de Bode (inferior) de la soluci\'on de \ce{LiClO4} a diferentes concentraciones. En lineas cont\'inuas 0,0 V y en segmentos 0,3 V.}
+		\includegraphics[width = \linewidth]{simulaciones}
+		\caption{Valores de impedancia en funci\'on de la frecuencia para los resultados experimentales (izquierda) y las simulaciones (derecha) de \ce{LiClO4}. En l\'ineas cont\'inuas la magnitud.}
 		\label{fig: voltajes}
-	\end{figure}
+	\end{figure*}
 	
-	En la \autoref{fig: voltajes} se observa el cambio de la impedancia en soluciones de la misma concentración a diferente voltaje. Es evidente que el voltaje aplicado cambia la capacitancia como se observa al comparar los valores de CPE a la misma concentración, pero a diferente voltaje en la \autoref{tb: 0,0} y \autoref{tb: 0,3}. Esto es un aspecto que puede ser explicado con la teoría de Gouy-Chapman-Stern, con esto se considera que hay una variación en la capacitancia cuando hay una diferencia de voltaje con respecto al potencial Z. Este efecto es más notorio es sistemas de baja concentración del electrolito \cite{bard2001fundamentals}.
+	En la \autoref{fig: voltajes} se observa el cambio de la impedancia en soluciones de la misma concentración a diferente voltaje, as\'i como el comportamiento obtenido por el circuito simulado. Es evidente que el voltaje aplicado cambia la capacitancia como se observa al comparar los valores de CPE a la misma concentración, pero a diferente voltaje en la \autoref{tb: 0,0} y \autoref{tb: 0,3}. Esto es un aspecto que puede ser explicado con la teoría de Gouy-Chapman-Stern, con esto se considera que hay una variación en la capacitancia cuando hay una diferencia de voltaje con respecto al potencial Z. Este efecto es más notorio es sistemas de baja concentración del electrolito \cite{bard2001fundamentals}.
 	
 	\begin{figure}[h]
 		\centering
@@ -163,7 +170,7 @@
 	
 	En la \autoref{fig: iones} se observa que a 0,0 V no hay una diferencia en la impedancia entre el \ce{LiClO4} y el \ce{Na2SO4}, esto parece ser un efecto similar al que se observa en la \autoref{fig: concentraciones}, en la que el cambio de concentración no parece ser tan influyente en la impedancia a 0,0 V como si lo es a 0,3 V. También se observa que la solución de \ce{LiClO4} en acetonitrilo tiene un comportamiento muy distinto al del agua. Este efecto del solvente está dado porque la constante dieléctrica del acetonitrilo es menor, afectando su comportamiento electroquímico. 
 	
-	Como fue mencionado anteriormente es posible asociar un circuito ideal al efecto observado, dado que para los valores obtenidos de $n$ para las soluciones de \ce{LiClO4} a distintas concentraciones y potenciales es cercano a 1. De esta manera se tiene que para el capacitor en paralelo con la resistencia se tendr\'a una impedancia equivalente:
+	Finalmente, como fue mencionado anteriormente es posible asociar un circuito ideal al efecto observado, dado que los valores obtenidos de $n$, para las soluciones de \ce{LiClO4} a distintas concentraciones y potenciales es cercano a 1. De esta manera se tiene que para el capacitor en paralelo con la resistencia de la \autoref{fig: ideal} se tendr\'a una impedancia equivalente:
 	\begin{equation*}
 		Z_{eq} = \dfrac{Z_2Z_c}{Z_2 + Z_c} = \left(\dfrac{R_2}{j\omega C}\right)\dfrac{1}{(R_2 + 1/(j\omega C))}
 	\end{equation*}
@@ -171,11 +178,11 @@
 		Z_{eq} = \dfrac{R_2}{j\omega R_2C + 1} = \dfrac{R_2 - j\omega CR_2^2}{1+(\omega R_2C)^2}
 	\end{equation}
 	
-	Donde $\omega$ corresponde con la frecuencia angular, esto es: $\omega = 2\pi f$, con $f$ la frecuencia en Hz. Considerando ahora la resistencia de la soluci\'on, se tiene que la impedancia total $Z$ est\'a dada por la siguiente ecuaci\'on:
+	Considerando ahora la resistencia de la soluci\'on $R_1$, que se encuentra en serie con la impedancia equivalente hallada anteriormente, se tiene que la impedancia total $Z$ est\'a dada por la siguiente ecuaci\'on:
 	\begin{equation}
 		Z(\omega) = R_1 + Z_{eq} =  R_1 + \dfrac{R_2 - j\omega CR_2^2}{1+(\omega R_2C)^2}
 	\end{equation}
-	En particular se tiene que para $\omega \rightarrow 0$, $Z = R_1 + R_2$ y para $\omega \rightarrow \infty$ se tendr\'a $Z = R_1$. Lo cual explica la alta impedancia observada a bajas frecuencias, y su estabilizaci\'on a altas. Para la fase se tiene:
+	En particular se tiene que para $\omega \rightarrow 0$, $Z = R_1 + R_2$ y para $\omega \rightarrow \infty$ se tendr\'a $Z = R_1$. Lo cual explica la alta impedancia observada a bajas frecuencias, y su estabilizaci\'on a altas para las figuras \ref{fig: concentraciones}, \ref{fig: voltajes} y \ref{fig: iones}. Para la fase se tiene:
 	
 	\footnotesize
 	\begin{equation}
@@ -183,7 +190,7 @@
 	\end{equation}
 	\normalsize
 	
-	Para lo cual en ambos l\'imites $\omega\rightarrow 0$ y $\omega\rightarrow \infty$, se tiene $\theta = 0$. Esto explica c\'omo cae la fase para valores altos de frecuencia, y el incremento de la misma a valores bajos. M\'as a\'un, la derivada del mismo determina la posici\'on del punto cr\'itico.
+	En ambos l\'imites $\omega\rightarrow 0$ y $\omega\rightarrow \infty$, se tiene $\theta = 0$. Esto explica c\'omo cae la fase para valores altos de frecuencia, y el incremento de la misma a valores bajos. M\'as a\'un, la derivada de la fase en funci\'on de la frecuencia angular determina el valor del punto cr\'itico.
 	
 	\footnotesize
 	\begin{equation}
@@ -196,7 +203,8 @@
 		\omega_0 = \dfrac{\sqrt{R_1 + R_2}}{C\sqrt{R_1R_2}}
 	\end{equation}
 	
-	De acuerdo con los valores de la \autoref{tb: 0,0} y \autoref{tb: 0,3} las frecuencias corresponden a: 3.65 Hz y 6.97 Hz, 2.95 Hz y 5.78 Hz correspondientemente para las concentraciones de 0,1 M y 1,0 M a 0,0 V y 0,3 V. Lo anterior constituye una prueba adicional de los valores de $n$ mostrados en las mismas tablas, pues las frecuencias son cercanas a las observadas en la \autoref{fig: concentraciones}.
+	De acuerdo con los valores de la \autoref{tb: 0,0} y \autoref{tb: 0,3} las frecuencias son a: 3.65 Hz y 6.97 Hz, 2.95 Hz y 5.78 Hz correspondientemente para las concentraciones de 0,1 M y 1,0 M a 0,0 V y 0,3 V. Lo anterior constituye una prueba adicional del comportamiento an\'alogo que presentan los compuestos de fase constante con los capacitores para grandes valores de $n$, pues las frecuencias son cercanas a las observadas en la \autoref{fig: concentraciones}.
+	\pagebreak
 	
 	Ahora, en particular para el circuito ideal RC, se tiene una resistencia $R$ en serie con un capacitor $C$, de tal forma que la impedancia est\'a dada por:
 	\begin{equation}
@@ -211,7 +219,7 @@
 	Dada la forma asint\'otica de la funci\'on arcotangente, para $\omega\rightarrow0$ la funci\'on est\'a definida y tiende a 90 $^\circ$, y en $\omega\rightarrow\infty$ tendr\'a valor cero. Dicho comportamiento tambi\'en se evidencia en la \autoref{fig: iones}. A partir de este an\'alisis es posible concluir que tanto el sistema ideal como el sistema electrolito/electrodo tienen comportamientos an\'alogos pues la forma de las curvas es la misma.
 	
 	\section{Conclusiones}
-	
+	El efecto de la concentraci\'on en soluciones de un mismo electrolito fue estudiado, usando espectroscop\'ia de impedancias, logrando obtener un comportamiento consistente para el que a menores concentraciones mayor impedancia en la soluci\'on, efecto asociado a la falta de transportadores de carga. Usando un circuito asociado ideal fue describir los espectros obtenidos, tanto en magnitud como fase. Dicho circuito an\'alogo fue simulado logrando obtener valores para la capacitancia de la doble capa el\'ectrica y la resistencia de la soluci\'on. Adicionalmente el efecto del potencial aplicado, el electrolito y el disolvente fue discutido.
 	
 	%----------------------------------------------------------------------------------------
 	%	REFERENCE LIST
