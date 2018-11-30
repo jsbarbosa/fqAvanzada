@@ -1,0 +1,75 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin = 2.5cm]{geometry}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+
+%opening
+\title{}
+\author{}
+
+\begin{document}
+	\begin{center}
+		\scshape
+		Fisicoquímica Avanzada
+		
+		Juan Barbosa (201325901)
+	\end{center}
+	\begin{enumerate}
+		\item Cuáles son los principales errores qué se pueden cometer experimentalmente y teóricamente cuando se utiliza la ecuación de BET?
+		
+		La ecuación de BET está dada por:
+		\begin{equation}
+			\dfrac{1}{v(\psi - 1)} = \dfrac{c-1}{v_mc}\psi + \dfrac{1}{v_mc}
+		\end{equation}
+		
+		donde $c$ corresponde con la constante BET, $v_m$ el volumen de la monocapa, $\psi$ la presión relativa y $v$ el volumen adsorbido.
+		\begin{enumerate}
+			\item \textbf{Constante $c$ negativa:} Al momento de realizar un diagrama BET, sobre algún intervalo de presiones relativas para el cual se tenga un comportamiento lineal se tiene que el volumen de la monocapa estará dado por:
+			\begin{equation}
+				v_m = \dfrac{1}{m + b} \qquad \text{donde $m$ es la pendiente, y $b$ el intercepto}
+			\end{equation}
+			
+			y la constante BET por:
+			\begin{equation}
+				c = 1 + \dfrac{m}{b}
+			\end{equation}
+			
+			Sin embargo, en ocasiones el factor $m/b$ adquiere un valor negativo, por lo cual es posible obtener valores de $c < 0$. Pero lo anterior carece de sentido físico dado que en la teoría BET, esta constante se asocia una ecuación de Arrhenius de la forma:
+			\begin{equation}\label{arrhenius}
+				c = \exp\left(\dfrac{Q_1 - Q_L}{RT}\right)
+			\end{equation}
+			
+			donde $Q_1$ corresponde con el calor de adsorción de la monocapa, $Q_L$ con el calor de licuefacción, que a su vez corresponde con $Q_2 = \cdots = Q_n$ los calores de adsorción de las multicapas. En particular, la función exponencial tiene rango: $\{\mathbb{R} \geq 0\}$ por lo cual un valor negativo de $c$ es contradictorio con la teoría.
+			
+			\item \textbf{Selección del intervalo lineal:} Si bien Rouquerol determina dos criterios para escoger el intervalo lineal, la escogencia es arbitraria desde que se cumpla con los siguientes criterios:
+			\begin{itemize}
+				\item El intervalo debe dar lugar a un valor de $c$ positivo.
+				\item El término $v(p^0 - p)$ debe aumentar continuamente con $p/p^0$.
+			\end{itemize}
+			
+			\item \textbf{Obtener calores de adsorción a partir de $c$}: La \autoref{arrhenius} se obtiene de una forma de Arrhenius, pero los autores: Brunauer, Emmett, Teller, asumen que la constante de proporcionalidad es 1, lo cual no necesariamente es cierto para cualquier sistema químico.
+			
+			\item \textbf{Superficie homogénea:} La teoría BET asume una superficie homogénea, pero en el caso de superficies considerablemente rugosas se tendrán propiedades que varían en cada punto de la muestra, por lo cual únicamente será posible observar el promedio de estas propiedades, entre las que se encuentran los calores de adsorción ligados a la constante $c$. Además, existe la posibilidad que existan en la superficie lugares con mayor o menor densidad de poros.
+			
+			\item \textbf{Simplificación de las interacciones intermoleculares:} en esta teoría se asume que las moléculas de gas no interactúan entre ellas, salvo cuando se encuentran adsorbidas. Aún en este punto, la interacción es sólo vertical (para formar una nueva capa), sin embargo se dice que no interactúan lateralmente con otras moléculas adsorbidas que se encuentren en la misma capa, esto hace que medidas muy precisas de diagramas BET sean dependientes del gas usado como adsorbato.
+			
+			\item \textbf{Limitaciones en microporos:} En particular para los microporos, las asunciones de la teoría BET no son válidas puesto que:
+			\begin{itemize}
+				\item Existe un impedimento estérico en el ancho de las capas de adsorción.
+				\item Las multicapas se empiezan a formar antes que se complete la primera.
+				\item Es posible obtener la sección transversal molecular $\sigma$ a partir de la densidad de adsorbato en el estado líquido.
+				\item Todas las moléculas en la monocapa ocupan la misma superficie $\sigma$.
+				\item Las moléculas se organizan en un empaquetamiento hexagonal.
+			\end{itemize} 
+			
+			\item \textbf{Desgasificación:}
+			Para realizar un estudio de isotermas de adsorción sobre un material, es necesario desgasificarlo. Sin embargo, en ocasiones para evitar descomponer la muestra, se usan rampas de calentamiento que son insuficientes para desorber completamente los gases en la muestra, lo cual dará una medida errónea de los volúmenes adsorbidos.
+		\end{enumerate}
+	\end{enumerate}
+
+	Rouquerol, F., J. Rouquerol, and S. Kenneth. ``Is the BET Equation Applicable to Microporous Adsorbents Adsorption by Powders and Porous Solids." (1999).
+\end{document}
